@@ -25,6 +25,17 @@ $('.logout').on('click', function (e) {
   window.location.href = './index.html';
 });
 
+/** MENU MOBILE */
+$('.hamburguer img').on('click', function () {
+  $('.menu-mobile').addClass('active');
+  $('.layer').addClass('active');
+});
+
+$('.close img').on('click', function () {
+  $('.menu-mobile').removeClass('active');
+  $('.layer').removeClass('active');
+});
+
 /** CONTADOR  */
 var count = 601;
 
@@ -38,14 +49,3 @@ function start() {
 }
 
 start();
-
-/** MENU MOBILE */
-$('.hamburguer img').on('click', function () {
-  $('.menu-mobile').addClass('active');
-  $('.layer').addClass('active');
-});
-
-$('.close img').on('click', function () {
-  $('.menu-mobile').removeClass('active');
-  $('.layer').removeClass('active');
-});

@@ -7,6 +7,15 @@
     url('fonts/MarkPro.ttf') format('truetype');
 }
 
+@font-face {
+  font-family: 'Mark Pro Bold';
+  src: url('fonts/MarkProBold.eot');
+  src: url('fonts/MarkProBold.eot?#iefix') format('embedded-opentype'),
+    url('fonts/MarkProBold.woff2') format('woff2'),
+    url('fonts/MarkProBold.woff') format('woff'),
+    url('fonts/MarkProBold.ttf') format('truetype');
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -179,15 +188,16 @@ h1 {
 
 .tela-inicial header .hora h1 {
   font-size: 5em;
+  font-family: 'Mark Pro Bold';
 }
 
 .tela-inicial header .clima-cidade h2 {
-  font-size: 2em;
+  font-size: 1.7em;
+  font-family: 'Mark Pro Bold';
 }
 
 .tela-inicial header .clima-cidade .clima {
   display: flex;
-  align-items: center;
   justify-content: center;
 }
 
