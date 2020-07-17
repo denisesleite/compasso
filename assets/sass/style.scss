@@ -1,0 +1,576 @@
+@font-face {
+  font-family: 'Mark Pro';
+  src: url('fonts/MarkPro.eot');
+  src: url('fonts/MarkPro.eot?#iefix') format('embedded-opentype'),
+    url('fonts/MarkPro.woff2') format('woff2'),
+    url('fonts/MarkPro.woff') format('woff'),
+    url('fonts/MarkPro.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Mark Pro Bold';
+  src: url('fonts/MarkProBold.eot');
+  src: url('fonts/MarkProBold.eot?#iefix') format('embedded-opentype'),
+    url('fonts/MarkProBold.woff2') format('woff2'),
+    url('fonts/MarkProBold.woff') format('woff'),
+    url('fonts/MarkProBold.ttf') format('truetype');
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  font-family: 'Mark Pro';
+  color: #222;
+}
+
+p,
+span,
+a {
+  font-size: 0.75em;
+  text-decoration: none;
+}
+
+h1 {
+  font-size: 2.4em;
+}
+
+.tela-login {
+  display: flex;
+  min-height: 100vh;
+
+  .coluna {
+    width: 50%;
+
+    @media (max-width: 768px) {
+      width: 100%;
+    }
+
+    &.login {
+      background: linear-gradient(180deg, #33383d 0%, #1c1d20 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      @media (max-width: 768px) {
+        justify-content: inherit;
+      }
+
+      .content {
+        width: 40%;
+
+        @media (max-width: 768px) {
+          width: 67%;
+        }
+
+        h1 {
+          @media (max-width: 768px) {
+            font-size: 1.2em;
+          }
+        }
+
+        h1,
+        h3,
+        p {
+          color: #e0e0e0;
+          margin-bottom: 10px;
+          font-weight: 300;
+        }
+
+        form {
+          margin-top: 18px;
+
+          .form-input {
+            display: flex;
+            align-items: center;
+            margin-bottom: 22px;
+            position: relative;
+
+            img {
+              width: 15px;
+              height: 15px;
+              position: absolute;
+              right: 14px;
+
+              #lock {
+                width: 16px;
+                height: 18px;
+              }
+            }
+
+            input {
+              background: transparent;
+              border: 1px solid #e0e0e0;
+              padding: 10px 12px;
+              border-radius: 20px;
+              width: 100%;
+              transition: all 0.5s linear;
+              color: #e0e0e0;
+              font-size: 0.75em;
+
+              &:focus {
+                animation: treme 0.2s;
+                animation-timing-function: 3;
+              }
+
+              &::placeholder {
+                color: #e0e0e0;
+                background: transparent;
+              }
+
+              &.error-input {
+                border: 1px solid #e9b425;
+              }
+            }
+          }
+
+          .button {
+            margin-top: 32px;
+
+            @media (max-width: 768px) {
+              margin-top: 25px;
+            }
+
+            button {
+              background: linear-gradient(90deg, #ff2d04 0%, #c13216 100%);
+              color: #e0e0e0;
+              border-radius: 30px;
+              border: 0;
+              box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+              padding: 10px;
+              width: 100%;
+              cursor: pointer;
+              transition: all 0.3s linear;
+              border: 1px solid transparent;
+
+              &:hover {
+                opacity: 0.7;
+              }
+            }
+          }
+
+          .error {
+            text-align: center;
+
+            span {
+              font-weight: 600;
+              color: #e9b425;
+              transition: all 0.3s linear;
+              opacity: 0;
+              visibility: hidden;
+
+              &.active {
+                opacity: 1;
+                visibility: visible;
+              }
+            }
+          }
+        }
+
+        .boas-vindas {
+          margin-bottom: 100px;
+
+          @media (max-width: 768px) {
+            margin-bottom: 40px;
+          }
+
+          .logo {
+            @media (max-width: 768px) {
+              &.mobile {
+                text-align: center;
+                img {
+                  width: 150px;
+                  margin: 13px 0 25px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    &.background {
+      background: url('../img/background.jpg');
+      background-repeat: no-repeat;
+      background-size: cover;
+
+      @media (max-width: 768px) {
+        display: none;
+      }
+
+      .logo {
+        text-align: center;
+        margin-top: 18px;
+
+        img {
+          width: 175px;
+        }
+      }
+    }
+  }
+}
+
+.tela-inicial {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  header {
+    @media (max-width: 768px) {
+      flex-direction: column;
+    }
+
+    .topo {
+      padding: 10px 22px;
+      display: flex;
+      justify-content: space-between;
+
+      &.desktop {
+        @media (max-width: 768px) {
+          display: none;
+        }
+      }
+
+      &.mobile {
+        @media (max-width: 768px) {
+          flex-direction: column;
+          padding: 0;
+
+          .logo {
+            img {
+              width: 130px;
+            }
+          }
+
+          .header-mob {
+            background: linear-gradient(92.98deg, #33383d 0%, #1c1d20 100%);
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+          }
+        }
+      }
+    }
+
+    .hora {
+      text-align: center;
+
+      @media (max-width: 768px) {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row-reverse;
+        align-items: center;
+        padding: 0 9px;
+        background: #000;
+        padding: 2px 9px;
+
+        > div {
+          display: flex;
+        }
+
+        p {
+          color: #fff;
+          font-size: 0.6em;
+        }
+      }
+
+      h1 {
+        font-size: 5em;
+        font-family: 'Mark Pro Bold';
+
+        @media (max-width: 768px) {
+          font-size: 0.85em;
+          color: #fff;
+          margin-left: 5px;
+        }
+      }
+    }
+
+    .clima-cidade {
+      @media (max-width: 768px) {
+        text-align: right;
+        margin-top: 10px;
+      }
+
+      h2 {
+        font-size: 1.7em;
+        font-family: 'Mark Pro Bold';
+
+        @media (max-width: 768px) {
+          font-size: 1.3em;
+        }
+      }
+
+      .clima {
+        display: flex;
+        justify-content: center;
+
+        @media (max-width: 768px) {
+          justify-content: flex-end;
+        }
+
+        img {
+          width: 27px;
+          height: 27px;
+          margin-right: 8px;
+        }
+      }
+    }
+  }
+
+  main {
+    .bola {
+      position: absolute;
+      bottom: 40px;
+
+      @media (max-width: 768px) {
+        top: 43px;
+        z-index: -1;
+      }
+
+      img {
+        width: 300px;
+
+        @media (max-width: 768px) {
+          width: 100px;
+        }
+      }
+    }
+
+    .descricao {
+      margin-right: 130px;
+      text-align: right;
+
+      @media (max-width: 768px) {
+        margin-right: 0px;
+        text-align: left;
+        padding: 75px 0 40px;
+      }
+
+      h1 {
+        @media (max-width: 768px) {
+          font-size: 1.4em;
+        }
+      }
+
+      h1,
+      h2 {
+        color: #c12d18;
+      }
+    }
+  }
+
+  footer {
+    background: linear-gradient(92.98deg, #33383d 0%, #1c1d20 100%);
+    display: flex;
+    height: 85px;
+    position: relative;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+      height: auto;
+      position: inherit;
+    }
+
+    p,
+    h1 {
+      color: #e0e0e0;
+    }
+
+    .conteudo {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      @media (max-width: 768px) {
+        flex-direction: column;
+        padding: 15px;
+        width: calc(100% - 30px);
+      }
+
+      .texto-footer {
+        display: flex;
+        align-items: center;
+
+        @media (max-width: 768px) {
+          flex-direction: column;
+        }
+
+        p {
+          text-align: right;
+
+          @media (max-width: 768px) {
+            text-align: center;
+          }
+        }
+
+        .linha {
+          width: 1px;
+          height: 44px;
+          background: #e0e0e0;
+          margin-left: 24px;
+
+          @media (max-width: 768px) {
+            width: 50%;
+            height: 1px;
+            margin: 25px auto;
+          }
+        }
+      }
+
+      .contador {
+        margin: 0 100px;
+        display: flex;
+        align-items: center;
+
+        .application {
+          p {
+            text-align: right;
+
+            @media (max-width: 768px) {
+              text-align: center;
+            }
+          }
+        }
+
+        .time {
+          text-align: center;
+          margin-left: 20px;
+        }
+      }
+    }
+
+    .buttons-login {
+      display: flex;
+
+      @media (max-width: 768px) {
+        display: none;
+      }
+
+      a {
+        height: 100%;
+        width: 130px;
+        border: 0;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+
+        &.continuar-navegando {
+          transition: background 0.5s ease;
+          background: #ffffff;
+          color: #c13216;
+
+          &:hover {
+            background: #c13216;
+            color: #fff;
+          }
+        }
+
+        &.logout {
+          transition: background 0.5s ease;
+          background: transparent;
+          color: #fff;
+
+          &:hover {
+            background: #ffffff;
+            color: #c13216;
+          }
+        }
+      }
+    }
+  }
+
+  .layer {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s linear;
+    z-index: 9;
+
+    &.active {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  .menu-mobile {
+    @media (max-width: 768px) {
+      position: fixed;
+      left: 0;
+      top: 0;
+      background: #000;
+      width: 200px;
+      height: 100%;
+      transform: translate(-100%);
+      transition: all 0.5s ease;
+      opacity: 0;
+      visibility: hidden;
+      z-index: 99;
+
+      &.active {
+        opacity: 1;
+        visibility: visible;
+        transform: translate(0);
+      }
+    }
+
+    .close {
+      text-align: right;
+    }
+
+    .content {
+      text-align: center;
+
+      ul {
+        li {
+          a {
+            color: #fff;
+            line-height: 22px;
+          }
+        }
+      }
+
+      .border {
+        border-top: 1px solid #fff;
+        margin: 20px 20px 10px;
+      }
+    }
+  }
+}
+
+@keyframes treme {
+  0% {
+    margin-left: 0;
+  }
+  25% {
+    margin-left: 5px;
+  }
+  50% {
+    margin-left: 0;
+  }
+  75% {
+    margin-left: -5px;
+  }
+  100% {
+    margin-left: 0;
+  }
+}
+
+@media (min-width: 768px) {
+  .tela-inicial .topo.mobile,
+  .tela-inicial .menu-mobile,
+  .tela-login .coluna .logo.mobile {
+    display: none;
+  }
+}
