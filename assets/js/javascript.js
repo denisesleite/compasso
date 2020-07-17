@@ -9,7 +9,7 @@ $('form').on('submit', function (e) {
   if (
     inputUsuario == '' ||
     inputSenha == '' ||
-    inputUsuario !== 'teste@gmail.com' ||
+    inputUsuario !== 'teste' ||
     inputSenha != 123
   ) {
     $('.error span').addClass('active');
